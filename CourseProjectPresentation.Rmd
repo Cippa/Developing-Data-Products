@@ -1,0 +1,42 @@
+---
+title: 'Coronavirus epidemic: trends of cases and deaths by country'
+author: "Fulvio Barizzone"
+date: "15/06/2020"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## The Application
+
+- **Objective**: following the trend the Coronavirus epidemic in the different countries in the word.
+- **Features**: 
+    + Automatic update of the underlying dataset
+    + Selection of the Country of Interest
+    + Allowing dowload of the datasets
+    
+## How the App is built
+
+- Dataset downloaded from [*Max Roser, Hannah Ritchie, Esteban Ortiz-Ospina and Joe Hasell* (2020) - Coronavirus Pandemic (COVID-19)](https://ourworldindata.org/coronavirus)
+- A dropdown list is created allowing to select the Country of interest
+- Reactive interactive Graps on number of cases and deaths by Coronavirus per day are generated
+- Reactive downloads buttons allow to to download the datasets of interest
+
+## How the App looks like
+
+![*App appearence*](AppAppearance.jpg){#id .class width=75% height=75%}
+
+## Where to find the App and the related code
+
+- **App**:  the app is available [here](https://cippa.shinyapps.io/developing-data-products/)
+    + *Disclaimer*: at first time it may require a bit of time before starting 
+    since it has to download the dataset
+- **Code**: You can access the code of the application [here](https://github.com/Cippa/Developing-Data-Products/blob/gh-pages/app.R)  
+
+**Thanks for your time!**  
+*Fulvio*
+
+
+

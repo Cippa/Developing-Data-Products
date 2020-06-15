@@ -18,11 +18,21 @@ knitr::opts_chunk$set(echo = FALSE)
     + Allowing dowload of the datasets
     
 ## How the App is built
-
-- Dataset downloaded from [*Max Roser, Hannah Ritchie, Esteban Ortiz-Ospina and Joe Hasell* (2020) - Coronavirus Pandemic (COVID-19)](https://ourworldindata.org/coronavirus)
-- A dropdown list is created allowing to select the Country of interest
-- Reactive interactive Graps on number of cases and deaths by Coronavirus per day are generated
-- Reactive downloads buttons allow to to download the datasets of interest
+- Download dataset: [*Max Roser, Hannah Ritchie, Esteban Ortiz-Ospina and Joe Hasell* (2020)](https://ourworldindata.org/coronavirus)
+- Dropdown list created allowing select Country of interest
+```{r, eval=FALSE, echo=TRUE}
+countries <- prepareCountryList(coronavirus)
+```
+- Generation Reactive interactive Graps on number of cases and deaths by day
+```{r, eval=FALSE, echo=TRUE}
+observeEvent(eventExpr = input$submit, {
+        output$plotCases <- renderPlotly({
+            print(ggplotly(ggplot(data = country(), mapping = aes(x = Date, y = Cases)) +
+                        geom_line() +
+                        geom_smooth() +
+                        labs(x = "Date", y = "Nº of cases per day")))})})
+```
+- Reactive downloads buttons to download datasets of interest
 
 ## How the App looks like
 
